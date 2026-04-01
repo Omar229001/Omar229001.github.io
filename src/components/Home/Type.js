@@ -1,15 +1,14 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-
 function Type() {
   return (
     <Typewriter
       options={{
         strings: [
-          "Software Developer",
-          "Freelancer",
-          "MERN Stack Developer",
-          "Open Source Contributor",
+          "Cloud & DevOps Engineer",
+          "Bare Metal & Infrastructure",
+          "Full-Stack Developer",
+          "MSc Data & AI @ Epitech",
         ],
         autoStart: true,
         loop: true,
@@ -18,5 +17,4 @@ function Type() {
     />
   );
 }
-
 export default Type;
