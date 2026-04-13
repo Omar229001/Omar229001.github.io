@@ -9,43 +9,43 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              PERMETTEZ-MOI DE <span className="purple"> ME PRÉSENTER </span>
             </h1>
             <p className="home-about-body">
-              I'm a versatile engineer who builds across the full spectrum —
-              from bare metal servers to cloud infrastructure, from backend APIs
-              to data pipelines, from automation scripts to production deployments.
-              I don't specialize in one layer. I own the whole thing.
+              Je suis un ingénieur polyvalent qui intervient sur toute la chaîne
+              technique — des serveurs bare metal à l'infrastructure cloud, des
+              APIs backend aux pipelines de données, des scripts d'automatisation
+              aux déploiements en production. Je ne me spécialise pas dans une
+              seule couche. Je maîtrise l'ensemble.
               <br />
               <br />
-              Currently pursuing an{" "}
-              <b className="purple">MSc in Computer Science (Data, AI & Cybersecurity)</b>{" "}
-              at Epitech, with a MIAGE degree from Université d'Aix-Marseille,
-              I combine strong academic foundations with real-world engineering experience.
+              Actuellement en fin de <b className="purple">MSc Informatique (Data, IA & Cybersécurité)</b>{" "}
+              à Epitech, avec une Licence MIAGE de l'Université d'Aix-Marseille,
+              je combine des bases académiques solides avec une expérience terrain réelle.
               <br />
               <br />
-              My technical range spans
-              <i>
-                <b className="purple"> cloud infrastructure (Azure, Terraform, CI/CD)</b>
-              </i>
-              , systems programming in <b className="purple">C and Rust</b>,
-              backend development with <b className="purple">Java Spring and Node.js</b>,
-              frontend with <b className="purple">React and Next.js</b>,
-              data engineering and <b className="purple">Machine Learning</b> —
-              all grounded by hands-on DevOps practice on my own
-              bare metal production server.
+              Mon spectre technique couvre l'infrastructure cloud <b className="purple">(Azure, Terraform, CI/CD)</b>,
+              la programmation système en <b className="purple">C</b>,
+              le développement backend avec <b className="purple">Java Spring et Node.js</b>,
+              le frontend avec <b className="purple">React et Next.js</b>,
+              l'ingénierie des données et le <b className="purple">Machine Learning</b> —
+              le tout ancré dans une pratique DevOps quotidienne sur mon propre
+              serveur bare metal en production.
               <br />
               <br />
-              As a Digital Projects Officer at{" "}
-              <b className="purple">LUMA Arles</b>, I've shipped end-to-end:
-              internal web platforms, no-code automation workflows,
-              data migration pipelines, API integrations and deployment scripts —
-              building the reflex of delivering, not just coding.
+              En tant que <b className="purple">Digital Projects Officer chez LUMA Arles</b>,
+              j'ai livré de bout en bout : plateformes web internes, workflows
+              d'automatisation, pipelines de migration de données, intégrations
+              API et scripts de déploiement — en développant le réflexe de
+              livrer, pas seulement de coder.
               <br />
               <br />
-              I'm also an entrepreneur at heart, independently building
-              SaaS tools and e-commerce platforms, with a strong vision for
-              <b className="purple"> tech opportunities in West Africa</b>.
+              Je suis aussi entrepreneur dans l'âme, je construis de manière
+              indépendante des outils SaaS et des plateformes e-commerce, avec
+              une vision forte des opportunités tech en Afrique de l'Ouest.
+              <br />
+              <br />
+              Basé en France, ouvert aux opportunités partout en Europe et au-delà.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
