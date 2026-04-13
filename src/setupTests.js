@@ -3,3 +3,8 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+jest.mock('./Assets/TechIcons/C++.svg', () => 'C++-svg');
+jest.mock('react-tsparticles', () => () => null);
+
+window.scrollTo = jest.fn();
