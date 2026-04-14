@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import useInView from '../hooks/useInView';
-import aboutImg from '../Assets/about.png';
+import aboutImg from '../Assets/about.jpg';
 
 const About = () => {
   const [ref, inView]       = useInView(0.12);

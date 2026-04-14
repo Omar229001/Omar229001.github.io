@@ -7,7 +7,7 @@ import useInView from '../hooks/useInView';
 import { FiMail, FiLinkedin, FiGithub, FiBookOpen, FiSend } from 'react-icons/fi';
 
 /* ── Remplacer par ton ID Formspree : https://formspree.io ── */
-const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_URL = 'https://formspree.io/f/mqewazyn';
 
 const CONTACT_LINKS = [
   {
