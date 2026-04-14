@@ -1,121 +1,101 @@
-import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
-import {
-  AiFillStar,
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
+/**
+ * Navbar — Fixed top navigation
+ * Transparente → solide au scroll + menu mobile hamburger
+ */
+import React, { useState, useEffect } from 'react';
 
-import { CgFileDocument } from "react-icons/cg";
+const NAV_LINKS = [
+  { label: 'Accueil',     href: '#accueil' },
+  { label: 'À propos',    href: '#apropos' },
+  { label: 'Compétences', href: '#competences' },
+  { label: 'Projets',     href: '#projets' },
+  { label: 'Vision',      href: '#vision' },
+  { label: 'Contact',     href: '#contact' },
+];
 
-function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive]     = useState('#accueil');
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
+  /* Scroll listener — solidifie la navbar */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-  window.addEventListener("scroll", scrollHandler);
+  /* Active section via IntersectionObserver */
+  useEffect(() => {
+    const sectionIds = NAV_LINKS.map(l => l.href.replace('#', ''));
+    const sections = sectionIds
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) setActive('#' + e.target.id);
+        });
+      },
+      { threshold: 0.35 }
+    );
+    sections.forEach(s => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLinkClick = (href) => {
+    setActive(href);
+    setMenuOpen(false);
+  };
 
   return (
-    <Navbar
-      expanded={expand}
-      fixed="top"
-      expand="md"
-      className={navColour ? "sticky" : "navbar"}
-    >
-      <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <span style={{fontSize: "1.8em", fontWeight: "bold", color: "#c770f0"}}>OZ.</span>
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
+    <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
+      <div className="container">
+        <div className="navbar-inner">
+          {/* Logo */}
+          <a href="#accueil" className="navbar-logo" onClick={() => handleLinkClick('#accueil')}>
+            OZ.
+          </a>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
+          {/* Desktop links */}
+          <ul className="navbar-links">
+            {NAV_LINKS.map(({ label, href }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  className={active === href ? 'active' : ''}
+                  onClick={() => handleLinkClick(href)}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
-              </Nav.Link>
-            </Nav.Item>
+          {/* Hamburger */}
+          <button
+            className={`navbar-toggle${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                href="https://oumorouzibo.me"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/Omar229001/oumorouzibo.me"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        {/* Mobile drawer */}
+        <div className={`navbar-drawer${menuOpen ? ' open' : ''}`}>
+          {NAV_LINKS.map(({ label, href }) => (
+            <a key={href} href={href} onClick={() => handleLinkClick(href)}>
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
   );
-}
+};
 
-export default NavBar;
+export default Navbar;

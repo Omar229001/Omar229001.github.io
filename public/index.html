@@ -1,51 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
+  <meta name="theme-color" content="#060d18" />
+
+  <!-- ── SEO ───────────────────────────────────── -->
+  <title>Oumorou ZIBO — Ingénieur Infrastructure & Cloud</title>
+  <meta name="description"
+    content="Portfolio d'Oumorou ZIBO — ingénieur polyvalent spécialisé en infrastructure cloud, DevOps, automatisation, data et développement produit. MSc Epitech." />
+  <meta name="keywords"
+    content="Oumorou ZIBO, ingénieur cloud, infrastructure, DevOps, Azure, Terraform, Docker, Kubernetes, Python, portfolio, Epitech" />
+  <meta name="author" content="Oumorou ZIBO" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ── Open Graph ────────────────────────────── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://oumorouzibo.me" />
+  <meta property="og:title"       content="Oumorou ZIBO — Ingénieur Infrastructure & Cloud" />
+  <meta property="og:description" content="Ingénieur polyvalent sur toute la chaîne technique — cloud, infra, data, IA, web, automatisation." />
+  <meta property="og:image"       content="https://oumorouzibo.me/favicon.png" />
+  <meta property="og:locale"      content="fr_FR" />
+
+  <!-- ── Twitter Card ──────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Oumorou ZIBO — Ingénieur Infrastructure & Cloud" />
+  <meta name="twitter:description" content="Ingénieur polyvalent sur toute la chaîne technique." />
+  <meta name="twitter:image"       content="https://oumorouzibo.me/favicon.png" />
+
+  <!-- ── Canonical ─────────────────────────────── -->
+  <link rel="canonical" href="https://oumorouzibo.me" />
+
+  <!-- ── Google Fonts (JetBrains Mono + Inter) ─── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- ── GitHub Pages SPA redirect ─────────────── -->
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
       var redirect = params.get('redirect');
-
       if (redirect) {
         window.history.replaceState(null, '', redirect);
       }
     })();
   </script>
-  <title>Oumorou Zibo | Portfolio</title>
-  <meta name="description" content="Self Developed personal website build with React.js">
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="Oumorou Zibo | Portfolio">
-  <meta itemprop="description" content="Self Developed personal website build with React.js">
-  <meta itemprop="image"
-    content="https://oumorouzibo.me/favicon.png">
-
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://oumorouzibo.me">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Oumorou Zibo | Portfolio">
-  <meta property="og:description" content="Self Developed personal website build with React.js">
-  <meta property="og:image"
-    content="https://oumorouzibo.me/favicon.png">
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Oumorou Zibo | Portfolio">
-  <meta name="twitter:description" content="Self Developed personal website build with React.js">
-  <meta name="twitter:image"
-    content="https://oumorouzibo.me/favicon.png">
+  <!-- ── Schema.org JSON-LD ────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Oumorou ZIBO",
+    "url": "https://oumorouzibo.me",
+    "jobTitle": "Ingénieur Infrastructure & Cloud",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Epitech" },
+      { "@type": "CollegeOrUniversity", "name": "Université d'Aix-Marseille" }
+    ],
+    "sameAs": [
+      "https://github.com/Omar229001",
+      "https://www.linkedin.com/in/oumorouzibo",
+      "https://blog.oumorouzibo.me"
+    ]
+  }
+  </script>
 </head>
-
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <noscript>JavaScript est requis pour afficher ce portfolio.</noscript>
   <div id="root"></div>
 </body>
-
 </html>
