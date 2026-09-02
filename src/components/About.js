@@ -47,17 +47,19 @@ const About = () => {
             className={`about-content slide-right${inRight ? ' visible' : ''}`}
           >
             <p className="about-text">
-              Je suis un ingénieur polyvalent qui intervient sur toute la chaîne
-              technique — des serveurs <strong>bare metal</strong> à l'infrastructure
-              cloud, des APIs backend aux pipelines de données, des scripts
-              d'automatisation aux déploiements en production.
+              Je suis un ingénieur <strong>DevOps & Cloud</strong>, spécialisé dans
+              l'intégration applicative et la transformation digitale. J'interviens
+              sur toute la chaîne technique — de l'infrastructure cloud aux APIs
+              backend en <strong>Java Spring Boot</strong>, des pipelines CI/CD aux
+              déploiements en production.
             </p>
             <p className="about-text">
               Je ne me spécialise pas dans une seule couche.{' '}
               <strong>Je maîtrise l'ensemble.</strong>
             </p>
             <p className="about-text">
-              Actuellement en fin de <strong>MSc Informatique à Epitech</strong>, avec une{' '}
+              Diplômé d'un <strong>Master 2 — Expert en Ingénierie et Systèmes
+              d'Information</strong> à <strong>Epitech Marseille</strong>, avec une{' '}
               <strong>Licence MIAGE de l'Université d'Aix-Marseille</strong>, je combine
               des bases académiques solides avec une expérience terrain réelle.
             </p>
@@ -66,8 +68,8 @@ const About = () => {
               <div className="highlight-item">
                 <span className="highlight-dot" />
                 <div>
-                  <strong>MSc Informatique — Epitech</strong>
-                  Formation d'élite en architecture logicielle et systèmes.
+                  <strong>Master 2 — Epitech Marseille</strong>
+                  Expert en Ingénierie et Systèmes d'Information.
                 </div>
               </div>
               <div className="highlight-item">
@@ -81,7 +83,7 @@ const About = () => {
                 <span className="highlight-dot" />
                 <div>
                   <strong>Expérience terrain</strong>
-                  Homelab, cloud, projets produit, startups — du code qui tourne en prod.
+                  DevOps, cloud, Java Spring Boot, intégration applicative — du code qui tourne en prod.
                 </div>
               </div>
             </div>
