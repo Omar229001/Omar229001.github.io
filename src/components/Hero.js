@@ -9,7 +9,7 @@ const SEQUENCE = [
   { type: 'command', text: '> whoami' },
   { type: 'output',  text: 'Oumorou ZIBO — Ingénieur. Bâtisseur. Entrepreneur.' },
   { type: 'command', text: '> cat stack.txt' },
-  { type: 'output',  text: 'Cloud · Infra · Data · IA · Web · Automatisation' },
+  { type: 'output',  text: 'DevOps · Cloud · Java Spring Boot · Intégration · Transformation Digitale' },
   { type: 'command', text: '> ./mission.sh' },
   { type: 'output',  text: 'Construire la tech qui compte — en Europe et en Afrique' },
 ];
